@@ -9,6 +9,11 @@
     margin: 0 1.3rem ;
 }
 
+.active {
+    color: goldenrod !important;
+    font-weight: bold !important;
+  }
+
 .navigation-menu li a{
     text-decoration: none;
     color: white;

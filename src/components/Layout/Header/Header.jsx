@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import FoodBankIcon from '@mui/icons-material/FoodBank';
 import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, Box, Divider, Drawer, IconButton, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Button, Divider, Drawer, IconButton, Toolbar, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import  './HeaderStyles.css';
 
@@ -14,23 +14,37 @@ const Header = () => {
   // menu drawer
   const drawer = (
   <Box onClick={handleDrawerToggle} sx={{textAlign: 'left'}}>
-    <Typography color={'goldenrod'} variant='h6' component="div" sx={{flexGrow:1, textAlign:'center'}}>
+    <Typography 
+      color={'goldenrod'} 
+      variant='h6' 
+      component="div" 
+      sx={{
+        flexGrow:1, 
+        textAlign:'center', 
+        my:'3'}}
+      >
       <FoodBankIcon />
         My Resturant
     </Typography>
       <Divider />
     <ul className='mobile-navigation'>
       <li>
-        <Link to={'/'}>Home</Link>
+      <Button><Link to={'/'}>Home</Link></Button>
       </li>
       <li>
-        <Link to={'/menu'}>Menu</Link>
+      <Button><Link to={'/menu'}>Menu</Link></Button>
       </li>
       <li>
-        <Link to={'/about'}>About</Link> 
+      <Button><Link to={'/about'}>About</Link> </Button>
       </li>
       <li>
-        <Link to={'/contact'}>Contact</Link>
+      <Button><Link to={'/contact'}>Contact</Link></Button>
+      </li>
+      <li>
+      <Button><Link to={'/login'}>Login</Link></Button>
+      </li>
+      <li>
+        <Button><Link to={'/signup'}>SignUp</Link></Button>
       </li>
     </ul>
             
@@ -72,6 +86,12 @@ const Header = () => {
                   <li>
                     <Link to={'/contact'}>Contact</Link>
                   </li>
+                  <li>
+                    <Link to={'/login'}>Login</Link>
+                  </li>
+                  <li>
+                    <Link to={'/signup'}>SignUp</Link>
+                  </li>
                 </ul>
               </Box>
             </Toolbar>
@@ -89,6 +109,9 @@ const Header = () => {
             >
               {drawer}
             </Drawer>
+          </Box>
+          <Box>
+            <Toolbar />
           </Box>
         </Box>
     </>
